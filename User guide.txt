@@ -1,3 +1,5 @@
+Yapımcılar: Fevzi | Ali
+
 #apt install figlet
 
 #apt install lolcat
