@@ -26,8 +26,13 @@ if(dil=="1"):
         print("Producers : Seition2 | AliAltnta")
         print("GitHub = https://github.com/Haydar12345")
         print("TryHackMe = https://tryhackme.com/p/AliAltnta")
-        print("""   
-                      
+        print(""" 
+12-legion
+
+11-hashdeep
+  
+10-Medusa   
+                   
 9-Port Scan                   
 
                               
@@ -64,8 +69,13 @@ elif(dil=="2"):
         print("Yapımcılar : Seition2 | AliAltnta")
         print("GitHub = https://github.com/Haydar12345")
         print("TryHackMe = https://tryhackme.com/p/AliAltnta")
-        print("""   
-                      
+        print("""  
+12-legion
+ 
+11-hashdeep
+
+10-Medusa
+                
 9-Port Taraması                   
 
                               
@@ -104,7 +114,12 @@ if(dil=="3"):
         print("GitHub = https://github.com/Haydar12345")
         print("TryHackMe = https://tryhackme.com/p/AliAltnta")
         print("""   
-                      
+12-legion
+
+11-hashdeep
+
+10-медуза
+                 
 9-Сканирование портов                
 
                               
@@ -136,8 +151,19 @@ if(dil=="3"):
 
 
 islemno = input("enter the transaction number > ")
+if(islemno=="11"):
+        hedefip = input("exe - text > ")
+        os.system("hashdeep -e " + hedefip)
 
-if(islemno=="9"):
+if(islemno=="12"):
+        hedefip = input(" > ")
+        os.system("legion " + hedefip)
+
+elif(islemno=="10"):
+        hedefip = input("Hostname - ip > ")
+        os.system("medusa -h " + hedefip)
+
+elif(islemno=="9"):
         hedefip = input("enter the target ip> ")
         os.system("nmap " + hedefip)
 
