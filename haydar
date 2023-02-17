@@ -27,21 +27,16 @@ if(dil=="1"):
         print("GitHub = https://github.com/Haydar12345")
         print("TryHackMe = https://tryhackme.com/p/AliAltnta")
         print(""" 
-12-legion
+11-aircrack
 
-11-hashdeep
+10-legion
+
+9-hashdeep
   
-10-Medusa   
+8-Medusa   
                    
-9-Port Scan                   
-
-                              
-8-Scan All Ports              
- 
-                              
-7-operating system scan       
-
-                              
+7-nmap                  
+                             
 6-Nikto Scan                  
 
                               
@@ -70,20 +65,15 @@ elif(dil=="2"):
         print("GitHub = https://github.com/Haydar12345")
         print("TryHackMe = https://tryhackme.com/p/AliAltnta")
         print("""  
-12-legion
- 
-11-hashdeep
+11-aircrack
 
-10-Medusa
+10-legion
+ 
+9-hashdeep
+
+8-Medusa
                 
-9-Port Taraması                   
-
-                              
-8-Tum Baglantı Noktalarını Tara              
- 
-                              
-7-İsletim Sistemi Taramasi      
-
+7-nmap                                 
                               
 6-Nikto Taraması                  
 
@@ -114,20 +104,15 @@ if(dil=="3"):
         print("GitHub = https://github.com/Haydar12345")
         print("TryHackMe = https://tryhackme.com/p/AliAltnta")
         print("""   
-12-legion
+11-aircrack
 
-11-hashdeep
+10-legion
 
-10-медуза
+9-hashdeep
+
+8-медуза
                  
-9-Сканирование портов                
-
-                              
-8-Сканировать все порты             
- 
-                              
-7-Сканирование операционной системы     
-
+7-nmap                               
                               
 6-Нико Скан               
 
@@ -155,30 +140,61 @@ if(islemno=="11"):
         hedefip = input("exe - text > ")
         os.system("hashdeep -e " + hedefip)
 
-if(islemno=="12"):
+if(islemno=="10"):
         hedefip = input(" > ")
         os.system("legion " + hedefip)
 
-elif(islemno=="10"):
+
+if(islemno=="9"):
+        hedefip = input(" > ")
+        os.system("airmon-ng start wlan0 " + hedefip)
+        os.system("aireplay-ng --deauth 10 -a " + hedefip)
+        os.system("aircrack-ng " + hedefip)
+
+
+elif(islemno=="8"):
         hedefip = input("Hostname - ip > ")
         os.system("medusa -h " + hedefip)
 
-elif(islemno=="9"):
-        hedefip = input("enter the target ip> ")
-        os.system("nmap " + hedefip)
+elif(islemno=="7"):
+        print("""
+1-sC -sV
+2-p
+3-g
+4-sp
+5-nmap -p 1-65535 localhost
 
-elif(islemno=="8"):
+
+""")
+        islem2 = input("enter the transaction number > ")
+        if(islem2=="1"):
+                hedefip = input("ip> ")
+                os.system("nmap -sC -sV " + hedefip)
+        if(islem2=="2"):
+                hedefip = input("ip>")
+                os.system("nmap -p" + hedefip)
+        if(islem2=="3"):
+                hedefip = input("ip> ")
+                os.system("nmap -g " + hedefip)
+        if(islem2=="4"):
+                hedefip = input("ip>")
+                os.system("nmap -sp " + hedefip)
+        if(islem2=="5"):
+                hedefip = input("ip>")
+                os.system("nmap -p 1-65535 " + hedefip)
+        else:
+                print("please make sure you enter an accurate value ...")
+
+
+
+
+elif(islemno=="6"):
         hedefip = input("enter the destination url > ")
         os.system("nikto -h " + hedefip)
 
-elif(islemno=="7"):
-        hedefip = input("enter the target ip > ")
-        os.system("nmap -O " + hedefip)
 
-elif(islemno=="6"):
-    verbose = input("To open Verbose Mode-type vv > ")
-    hedefip = input("enter the target ip > ")
-    os.system("nmap -p- " + hedefip+" "+verbose)
+
+
 
 elif(islemno=="5"):
         hedefurl = input("enter the target ip > ")
